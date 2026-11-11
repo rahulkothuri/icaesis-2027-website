@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speakers - ICAESIS-2027</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="logos/ieee-hyd.png">
+    <style>
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .speakers-grid.five-col {
+            grid-template-columns: repeat(5, 1fr);
+            max-width: 1300px;
+            gap: 22px;
+        }
+
+        /* Single centered card */
+        .speakers-grid.single {
+            display: flex;
+            justify-content: center;
+        }
+
+        .speakers-grid.single .speaker-card {
+            width: 260px;
+            max-width: 100%;
+        }
+
+        @media (max-width: 1200px) {
+            .speakers-grid.five-col {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1100px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .speakers-grid,
+            .speakers-grid.five-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 540px) {
+            .speakers-grid,
+            .speakers-grid.five-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .speaker-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--ieee-blue);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .speaker-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: top center;
+            background-color: #f0f4f8;
+        }
+
+        .speaker-info {
+            padding: 22px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .speaker-info h3 {
+            color: var(--ieee-dark-blue);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .speaker-info .speaker-role {
+            color: var(--ieee-blue);
+            font-weight: 500;
+            font-size: 0.98rem;
+            margin-bottom: 6px;
+        }
+
+        .speaker-info .speaker-affil {
+            color: #555;
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .speaker-badge {
+            display: inline-block;
+            margin-top: 14px;
+            align-self: center;
+            background: #e1f5fe;
+            color: #0277bd;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .schedule-embed {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            .schedule-embed {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo-container">
+                <a href="index.html" class="nav-brand">
+                    ICAESIS-2027
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li class="nav-dropdown"><a href="call-for-papers.html">For Authors</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="call-for-papers.html">Call for Papers</a></li>
+                        <li><a href="index.html#dates">Important Dates</a></li>
+                        <li><a href="call-for-papers.html#registration-fee">Registration Fee</a></li>
+                        <li><a href="call-for-papers.html#submission-guidelines">Submission Guidelines</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                    </ul>
+                </li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="speakers.html">Distinguished Guests</a></li>
+                <li><a href="venue.html">Venue</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="mobile-nav-btn"><a href="https://cmt3.research.microsoft.com/ICAESIS2027/Submission/Index" class="btn">Submit Paper</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://cmt3.research.microsoft.com/ICAESIS2027/Submission/Index" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">Submit Paper</a>
+            </div>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="hero" style="min-height: 40vh; height: 40vh;">
+        <div class="hero-content">
+            <h1>Distinguished Guests</h1>
+            <p>Distinguished chief guests, keynote speakers, and industry experts at ICAESIS-2027</p>
+        </div>
+    </section>
+
+    <!-- Keynote Speakers -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Chief Guest &amp; Keynote Speakers</h2>
+
+            <div class="speakers-grid">
+                <!-- Kalyan K. Sen -->
+                <div class="speaker-card">
+                    <img src="assets/speakers/kalyan-sen.png" alt="Dr. Kalyan K. Sen" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3>Dr. Kalyan K. Sen</h3>
+                        <p class="speaker-role">President &amp; Chief Technology Officer</p>
+                        <p class="speaker-affil">Sen Engineering Solutions, Inc., USA<br>IEEE Life Fellow &amp; IEEE PES Distinguished Lecturer</p>
+                        <span class="speaker-badge">Keynote Speaker</span>
+                    </div>
+                </div>
+
+                <!-- Srirama Srinivas -->
+                <div class="speaker-card">
+                    <img src="assets/speakers/srirama-srinivas.png" alt="Prof. Srirama Srinivas" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3>Prof. Srirama Srinivas</h3>
+                        <p class="speaker-role">Professor, Department of Electrical Engineering</p>
+                        <p class="speaker-affil">IIT Madras, Chennai, India</p>
+                        <span class="speaker-badge">Keynote Speaker</span>
+                    </div>
+                </div>
+
+                <!-- Bala Prasad Peddigari -->
+                <div class="speaker-card">
+                    <img src="assets/speakers/bala-prasad.png" alt="Mr. Bala Prasad Peddigari" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3>Mr. Bala Prasad Peddigari</h3>
+                        <p class="speaker-role">Chief Innovation Officer</p>
+                        <p class="speaker-affil">Tata Consultancy Services (TCS), India<br>Vice Chair, IEEE Hyderabad Section</p>
+                        <span class="speaker-badge">Keynote Speaker</span>
+                    </div>
+                </div>
+
+                <!-- V. S. K. Murthy Balijepalli -->
+                <div class="speaker-card">
+                    <img src="assets/speakers/krish-murthy.png" alt="Dr. V. S. K. Murthy Balijepalli (Krish)" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3>Dr. V. S. K. Murthy Balijepalli (Krish)</h3>
+                        <p class="speaker-role">CTO &amp; Promoter</p>
+                        <p class="speaker-affil">LUCES Innovation Consulting, Hyderabad, India<br>Chairman, IEEE PES India Chapters Council</p>
+                        <span class="speaker-badge">Keynote Speaker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Industry Session Speakers -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Guest & Keynote Speaker</h2>
+
+            <div class="speakers-grid single">
+                <!-- Shiva Prasad Kaleru -->
+                <div class="speaker-card">
+                    <img src="assets/speakers/shiva-prasad.png" alt="Mr. Shiva Prasad Kaleru" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3>Mr. Shiva Prasad Kaleru</h3>
+                        <p class="speaker-role">Juniper Networks Inc</p>
+                        <p class="speaker-affil">Sunnyvale, CA, USA</p>
+                        <span class="speaker-badge">Keynote Speaker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Industry Session Speakers -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Industry Tracks</h2>
+
+            <div class="speakers-grid">
+                <!-- Venkat Kishore Yarram -->
+                <div class="speaker-card" style="border-top-color: #28a745;">
+                    <img src="assets/speakers/venkat-kishore.png" alt="Mr. Venkat Kishore Yarram" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3>Mr. Venkat Kishore Yarram</h3>
+                        <p class="speaker-role">Senior Software Engineer</p>
+                        <p class="speaker-affil">PayPal, Austin, TX, USA</p>
+                        <span class="speaker-badge" style="background:#e8f5e9; color:#2e7d32;">Industry Speaker</span>
+                    </div>
+                </div>
+
+                <!-- Gnana Nishitha Chowdary Aluri -->
+                <div class="speaker-card" style="border-top-color: #28a745;">
+                    <img src="assets/speakers/gnana-nishitha.png" alt="Ms. Gnana Nishitha Chowdary Aluri" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3>Ms. Gnana Nishitha Chowdary Aluri</h3>
+                        <p class="speaker-role">Senior Software Engineer</p>
+                        <p class="speaker-affil">Lowe's, Charlotte, NC, USA</p>
+                        <span class="speaker-badge" style="background:#e8f5e9; color:#2e7d32;">Industry Speaker</span>
+                    </div>
+                </div>
+
+                <!-- Venkatesh Manohar -->
+                <div class="speaker-card" style="border-top-color: #28a745;">
+                    <img src="assets/speakers/venkatesh-manohar.png" alt="Mr. Venkatesh Manohar" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3>Mr. Venkatesh Manohar</h3>
+                        <p class="speaker-role">Senior Data Scientist</p>
+                        <p class="speaker-affil">Chewy, Plantation, FL, USA</p>
+                        <span class="speaker-badge" style="background:#e8f5e9; color:#2e7d32;">Industry Speaker</span>
+                    </div>
+                </div>
+
+                <!-- M. B. Vamshi Krishna -->
+                <div class="speaker-card" style="border-top-color: #28a745;">
+                    <img src="assets/speakers/vamshi-krishna.png" alt="Mr. M. B. Vamshi Krishna" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3>Mr. M. B. Vamshi Krishna</h3>
+                        <p class="speaker-role">Senior Manager, AI and Analytics</p>
+                        <p class="speaker-affil">Cognizant, USA</p>
+                        <span class="speaker-badge" style="background:#e8f5e9; color:#2e7d32;">Industry Speaker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conference Schedule -->
+    <section class="section-padding" id="schedule">
+        <div class="container">
+            <h2 class="section-title">Conference Schedule</h2>
+            <p style="text-align: center; max-width: 800px; margin: -30px auto 30px; font-size: 1.1rem; color: #555;">
+                View the full ICAESIS-2027 conference schedule below, or download a copy for your reference.
+            </p>
+            <div style="text-align: center; margin-bottom: 30px;">
+                <a href="assets/ICAESIS-2026-Schedule.pdf" class="btn" download>Download Schedule (PDF)</a>
+                <a href="assets/ICAESIS-2026-Schedule.pdf" class="btn" style="background-color: var(--ieee-blue); margin-left: 10px;" target="_blank">Open in New Tab</a>
+            </div>
+            <object class="schedule-embed" data="assets/ICAESIS-2026-Schedule.pdf" type="application/pdf">
+                <p style="padding: 20px; text-align: center;">
+                    Your browser can't display the embedded PDF.
+                    <a href="assets/ICAESIS-2026-Schedule.pdf" class="cr-link" download>Download the schedule here</a>.
+                </p>
+            </object>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <h3>ICAESIS-2027</h3>
+            <p>International Conference on Advanced Engineering for Sustainable and Integrated Systems</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="call-for-papers.html">For Authors</a>
+                <a href="templates.html">Templates</a>
+                <a href="speakers.html">Distinguished Guests</a>
+                <a href="travel-grants.html">Travel Grants</a>
+                <a href="https://www.ieee.org/security/privacy.html" target="_blank">IEEE Privacy Policy</a>
+                <a href="https://www.ieee.org/about/help/site-terms-conditions.html" target="_blank">Terms &
+                    Conditions</a>
+            </div>
+            <p>&copy; 2027 ICAESIS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
